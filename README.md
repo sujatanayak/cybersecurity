@@ -56,8 +56,8 @@ A summary of the access policies in place can be found in the table below.
 |----------|---------------------|----------------------|
 | Jump Box |    Yes              |  70.95.110.86 and the virtual network   |
 |   Elk    |    Yes              |  70.95.110.86                           |
-|   Web1       No
-|  Web2   |     No                                                         |
+|   Web1   |    No
+|  Web2    |     No                                                         |
 
 ### Elk Configuration
 
