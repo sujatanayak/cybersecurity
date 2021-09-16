@@ -1,6 +1,8 @@
 # cybersecurity
 ## Automated ELK Stack Deployment
 
+![azure elk project](https://github.com/sujatanayak/cybersecurity/blob/main/Diagram/Elk_project.drawio.png?raw=true)
+
 The files in this repository were used to configure the network depicted below.
 
 !TODO update path (Images/diagram_filename.png)
