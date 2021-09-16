@@ -35,8 +35,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.1   | Linux            |
-
- Elk       | webserver|20.110.120.52 Linux
+| Elk       | webserver|20.110.120.52| Linux
 | Web1 DVWA| Webservers|10.0.0.5   |  Linux           |
 | Web2 DVWA| Webserver |10.0.0.6  |   Linux           |
 
