@@ -1,18 +1,15 @@
 # cybersecurity
 ## Automated ELK Stack Deployment
 
+The files in this repository were used to configure the network depicted below.
 ![azure elk project](https://github.com/sujatanayak/cybersecurity/blob/main/Diagram/Elk_project.drawio.png?raw=true)
 
-The files in this repository were used to configure the network depicted below.
-
-!TODO update path (Images/diagram_filename.png)
-
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the __playbook___ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat or metricbeat
 
   - _TODO: Enter the playbook file._
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -25,11 +22,11 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- : What aspect of security do load balancers protect? What is the advantage of a jump box?_Load balancer  protect against dDos attack. Having a jumpbox ensures that the network is not assecible from the public domain and only through the jumpbox.
+- : What aspect of security do load balancers protect? What is the advantage of a jump box? Load balancer  protect against dDos attack. Having a jumpbox ensures that the network is not assecible from the public domain and only through the jumpbox.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the Network_ and system  logs_.
-- _: What does Filebeat watch for?_Filebeat monitors the log files or the location that the user specifies.
-- _: What does Metricbeat record?_records metrics on system and services
+- _: What does Filebeat watch for?_Filebeat monitors the log files or the location that the user specifies and sends them to either Elasticsearch or logstash.
+- _: What does Metricbeat record?Metricbeat monitors the servers and records metrics on system and services such as docker metrics or system metrics.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -46,19 +43,20 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the JumpBpx machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_home ip address (70.95.110.86)
+ Add whitelisted IP addresses: my home ip address 
 
-Machines within the network can only be accessed by JumpBoxprovisioner ____.
-- _TODO: Which machine did you allow to access your ELK VM? jumpbox vm What was its IP address?_51.141.172.142
+Machines within the network can only be accessed by  the JumpBoxprovisioner .
+ Which machine did you allow to access your ELK VM? jumpbox vm whose public IP address is 51.141.172.142 (private ip: 10.1.0.4)
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box |    Yes              |  70.95.110.86 and the virtual network   |
-|   Elk    |    Yes              |  70.95.110.86                           |
-|   Web1   |    No
-|  Web2    |     No                                                         |
+| Jump Box |    Yes              |  my public ip and the virtual network   |
+|   Elk    |    Yes              |  my public ip                         |
+|   Web1   |    No               | 10.1.0.4, LB(52.183.67.108)
+|  Web2    |     No              | 10.1.0.4  , LB(52.183.67.108)               |
+|load balancer(LB)|yes                |my public ip
 
 ### Elk Configuration
 
