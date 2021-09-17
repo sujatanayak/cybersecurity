@@ -22,11 +22,11 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- : What aspect of security do load balancers protect? What is the advantage of a jump box? Load balancer  protect against dDos attack. Having a jumpbox ensures that the network is not assecible from the public domain and only through the jumpbox.
+Load balancer ensures the availability of the servers by having redundancy. they also protects against dDos attack. Having a jumpbox ensures that the network is not assecible from the public domain and only through the jumpbox.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the Network_ and system  logs_.
-- What does Filebeat watch for?_Filebeat monitors the log files or the location that the user specifies and sends them to either Elasticsearch or logstash.
-- What does Metricbeat record?Metricbeat monitors the servers and records metrics on system and services such as docker metrics or system metrics.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the Network and system  logs.
+- What does Filebeat watch for? Filebeat monitors the log files or the location that the user specifies and sends them to either Elasticsearch or logstash.
+- What does Metricbeat record? Metricbeat monitors the servers and records metrics on system and services such as docker metrics or system metrics.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -61,12 +61,14 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _: What is the main advantage of automating configuration with Ansible?_Automation
+-The main advantage of automating configuration with Ansible is the ease and Automation
 
 The playbook implements the following tasks:
 - install docker.io
 - install python3
-- install elkcontainer
+-configure the webservers Web1 and Web2 with DVWA
+- install elk stack
+- install the filebeat and metricbeat
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -74,14 +76,13 @@ The following screenshot displays the result of running `docker ps` after succes
 ![image](https://user-images.githubusercontent.com/6061871/133705317-d7e04c1f-c55c-4613-aed6-3a031feba302.png)
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+IP addresses of the machines being monitored
 
 Machines : Web1 Ip:10.0.0.5 
 Machines : Web2 IP: 10.0.0.6
 
-We have installed the following Beats on these machines:
--Beats sucessfully installed in the machines are 
-Filebeat and Metric
+We have installed the following Beats on these machines: 
+Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
  Filebeat manages the logs for example filebeat logs the systemlogs
@@ -91,9 +92,10 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the  various yml filse to jumphost.
-- Update the hosts file to include...webservers ip address. Updating the host file two contain two sections [webservers] and [ELK] with the respective ip addresses. Also update the host file to include the python interpreter. specify under hosts in the yml file.
+- Copy the  various yml files from [The Elk project yml files](https://github.com/sujatanayak/cybersecurity/blob/main/Ansible/install_elk.yml) to jumphost provisioner.
+- Update the hosts file to include the webservers ip address. Updating the host file to contain two sections [webservers] and [ELK] with the respective ip addresses. Also update the host file to include the python interpreter. 
 - Run the playbook, and navigate to http://elkipaddress:5601/app/kibana to check that the  ELK installation worked as expected and the ELK server is up and running..
 
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+ **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+ specific command the user will use to run to download the playbook
