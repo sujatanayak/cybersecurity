@@ -25,8 +25,8 @@ Load balancing ensures that the application will be highly available, in additio
 - : What aspect of security do load balancers protect? What is the advantage of a jump box? Load balancer  protect against dDos attack. Having a jumpbox ensures that the network is not assecible from the public domain and only through the jumpbox.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the Network_ and system  logs_.
-- _: What does Filebeat watch for?_Filebeat monitors the log files or the location that the user specifies and sends them to either Elasticsearch or logstash.
-- _: What does Metricbeat record?Metricbeat monitors the servers and records metrics on system and services such as docker metrics or system metrics.
+- What does Filebeat watch for?_Filebeat monitors the log files or the location that the user specifies and sends them to either Elasticsearch or logstash.
+- What does Metricbeat record?Metricbeat monitors the servers and records metrics on system and services such as docker metrics or system metrics.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
