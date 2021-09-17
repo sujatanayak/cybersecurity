@@ -64,18 +64,14 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - _: What is the main advantage of automating configuration with Ansible?_Automation
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...install docker.io
-- install pip
-- install elk 
-- install 
-- ...
+- install docker.io
+- install python3
+- install elkcontainer
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
-![image](https://user-images.githubusercontent.com/6061871/133545755-14d5e51a-f15c-46ee-9df9-eb9ab5b6e3df.png)
-
+![image](https://user-images.githubusercontent.com/6061871/133705317-d7e04c1f-c55c-4613-aed6-3a031feba302.png)
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
@@ -84,23 +80,20 @@ Machines : Web1 Ip:10.0.0.5
 Machines : Web2 IP: 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_ filebeat and metric
+-Beats sucessfully installed in the machines are 
+Filebeat and Metric
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-- filebeat manages the logs for example filebeat logs the systemlogs and metricbeat monitors the system and the services,for example system metrics and the dockermetrics
+ Filebeat manages the logs for example filebeat logs the systemlogs
+ Metricbeat monitors the system and the services,for example system metrics and the dockermetrics
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the ___yml_ filse to _jumphost____.
-- Update the __host___ file to include...webservers ip address
-- Run the playbook, and navigate to ___http://elkipaddress:5601/app/kibana_ to check that the installation worked as expected.
+- Copy the  various yml filse to jumphost.
+- Update the hosts file to include...webservers ip address. Updating the host file two contain two sections [webservers] and [ELK] with the respective ip addresses. Also update the host file to include the python interpreter. specify under hosts in the yml file.
+- Run the playbook, and navigate to http://elkipaddress:5601/app/kibana to check that the  ELK installation worked as expected and the ELK server is up and running..
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? the.yml files, filebeat.yml and metricbeat.yml Where do you copy it?_jumphost
-- _Which file do you update to make Ansible run the playbook on a specific machine? host file. How do I specify which machine to install the ELK server on versus which to install Filebeat on?_by updating the host file two contain two sections [webservers] and [ELK] with the respective ip addresses. Also update the host file to include the python interpreter. specify under hosts in the yml file.
-- _Which URL do you navigate to in order to check that the ELK server is running?
-http://elkipaddress:5601/app/kibana
+
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
