@@ -93,7 +93,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the  various yml files from [The Elk project yml files](https://github.com/sujatanayak/cybersecurity/blob/main/Ansible/install_elk.yml) to jumphost provisioner.
-- Update the hosts file to include the webservers ip address. Updating the host file to contain two sections [webservers] and [ELK] with the respective ip addresses. Also update the host file to include the python interpreter. 
+- Update the [hosts file](https://github.com/sujatanayak/cybersecurity/blob/main/Ansible/Hosts)  to include the webservers ip address. Updating the host file to contain two sections [webservers] and [ELK] with the respective ip addresses. Also update the host file to include the python interpreter. 
 - Run the playbook, and navigate to http://elkipaddress:5601/app/kibana to check that the  ELK installation worked as expected and the ELK server is up and running..
 
 
